@@ -6,6 +6,8 @@ public class Main {
     public static void main(String[] args) {
     }
 
+    // Ejercicio #3
+
     public static void validarEdad(int edad) throws EdadInvalidaException {
         if (edad < 18) {
             throw new EdadInvalidaException("Debe ser mayor de edad.");
