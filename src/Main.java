@@ -10,12 +10,65 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        carreraCorredores();
+        int opcion = 0;
+
+        do {
+            mostrarMenuPrincipal();
+
+            System.out.print("\nIngrese la opción de su preferencia: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcion) {
+                case 1:
+                    simuladorDescargas();
+                    break;
+                
+                case 2:
+                    carreraCorredores();
+                    break;
+
+                case 3:
+                    solicitarEdad();
+                    break;
+                
+                case 4:
+                    calculadoraSegura();
+                    break;
+
+                case 5:
+                    registroActividades();
+                    break;
+                
+                case 6:
+                    System.out.println("Saliendo...");
+                    break;
+            
+                default:
+                    System.out.println("Opción inválida.");
+                    break;
+            }
+
+        } while (opcion != 6);
+    }
+
+    public static void mostrarMenuPrincipal() {
+        System.out.println("\n===============================");
+        System.out.println("             Menú");
+        System.out.println("==============================");
+        System.out.println("1. Simulador de Descargas");
+        System.out.println("2. Carrera de Corredores");
+        System.out.println("3. Validador de Edad");
+        System.out.println("4. Calculadora Segura");
+        System.out.println("5. Registro de Actividades");
+        System.out.println("6. Salir");
     }
 
     // Ejercicio #1
 
     public static void simuladorDescargas() {
+        System.out.println();
+        
         HiloDescarga archivo1 = new HiloDescarga("Archivo1");
         HiloDescarga archivo2 = new HiloDescarga("Archivo2");
         HiloDescarga archivo3 = new HiloDescarga("Archivo3");
