@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -27,6 +28,55 @@ public class Main {
         }
         catch(EdadInvalidaException e) {
             System.out.println("\nError: " + e.getMessage());
+        }
+    }
+
+    // Ejercicio #4 
+
+    public static void calculadoraSegura() {
+        try {
+            Calculadora.mostrarMenuCalculadora();
+
+            System.out.print("\nIngrese la opcion de su preferencia: ");
+            int opcion = scanner.nextInt();
+
+            if (opcion < 1 || opcion > 4) {
+                System.out.println("\nOpción inválida.");
+                return;
+            }
+
+            System.out.println("\nIngrese el primer número:");
+            double a = scanner.nextDouble();
+
+            System.out.println("\nIngrese el segundo número:");
+            double b = scanner.nextDouble();
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("\nResultado de la suma: " + Calculadora.sumar(a, b));
+                    break;
+
+                case 2:
+                    System.out.println("\nResultado de la resta: " + Calculadora.restar(a, b));
+                    break;
+
+                case 3:
+                    System.out.println("\nResultado de la multiplicación: " + Calculadora.multiplicar(a, b));
+                    break;
+
+                case 4:
+                    System.out.println("\nResultado de la división: " + Calculadora.dividir(a, b));
+                    break;
+            }
+        }
+        catch (InputMismatchException e) {
+            System.out.println("\nError: Debe ingresar números válidos.");
+        }
+        catch (ArithmeticException e) {
+            System.out.println("\nError: " + e.getMessage());
+        }
+        finally {
+            System.out.println("\nProceso finalizado.");
         }
     }
 }
