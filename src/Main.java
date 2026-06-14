@@ -10,6 +10,7 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        carreraCorredores();
     }
 
     // Ejercicio #1
@@ -22,6 +23,39 @@ public class Main {
         archivo1.start();
         archivo2.start();
         archivo3.start();
+    }
+
+    // Ejercicio #2
+
+    public static void carreraCorredores() {
+        System.out.println("\nCARRERA DE CORREDORES:");
+
+        HiloCorredor corredor1 = new HiloCorredor("Juan");
+        HiloCorredor corredor2 = new HiloCorredor("Pedro");
+        HiloCorredor corredor3 = new HiloCorredor("Ana");
+        HiloCorredor corredor4 = new HiloCorredor("Carlos");
+
+        System.out.println("\nEstado inicial del corredor Juan: " + corredor1.getState());
+        System.out.println("Estado inicial del corredor Pedro: " + corredor2.getState());
+        System.out.println("Estado inicial del corredor Ana: " + corredor3.getState());
+        System.out.println("Estado inicial del corredor Carlos: " + corredor4.getState() + "\n");
+
+        corredor1.start();
+        corredor2.start();
+        corredor3.start();
+        corredor4.start();
+
+        try {
+        Thread.sleep(12000);
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("\nEstado final del corredor Juan: " + corredor1.getState());
+        System.out.println("Estado final del corredor Pedro: " + corredor2.getState());
+        System.out.println("Estado final del corredor Ana: " + corredor3.getState());
+        System.out.println("Estado final del corredor Carlos: " + corredor4.getState());
     }
 
     // Ejercicio #3
