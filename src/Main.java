@@ -68,7 +68,7 @@ public class Main {
 
     public static void simuladorDescargas() {
         System.out.println();
-        
+
         HiloDescarga archivo1 = new HiloDescarga("Archivo1");
         HiloDescarga archivo2 = new HiloDescarga("Archivo2");
         HiloDescarga archivo3 = new HiloDescarga("Archivo3");
@@ -76,6 +76,15 @@ public class Main {
         archivo1.start();
         archivo2.start();
         archivo3.start();
+
+        try {
+            archivo1.join();
+            archivo2.join();
+            archivo3.join();
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     // Ejercicio #2
@@ -99,7 +108,10 @@ public class Main {
         corredor4.start();
 
         try {
-        Thread.sleep(12000);
+            corredor1.join();
+            corredor2.join();
+            corredor3.join();
+            corredor4.join();
         }
         catch (InterruptedException e) {
             e.printStackTrace();
@@ -251,11 +263,12 @@ public class Main {
                     break;
 
                 case 3:
-                    System.out.println("Saliendo al menú principal...");
+                    System.out.println("\nSaliendo al menú principal...");
                     break;
                 
                 default:
-                    System.out.println("Opción inválida.");
+                    System.out.println("\nOpción inválida.");
+                    break;
             }
         } while (opcion != 3);
     }
