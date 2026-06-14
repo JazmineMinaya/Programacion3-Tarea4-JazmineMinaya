@@ -7,18 +7,19 @@ public class HiloDescarga extends Thread {
 
     @Override
     public void run() {
-        System.out.println("\nDescargando " + archivo);
+        System.out.println("Descargando " + archivo + "...");
 
-        for (int i = 0; i <= 100; i++) {
+
+        for (int i = 0; i <= 100; i+=20) {
             System.out.println(archivo + " " + i + "%");
             try {
-                Thread.sleep(500);
+                Thread.sleep(1000);
             }
             catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
 
-        System.out.println("\n" + archivo + " completado.");
+        System.out.println(archivo + " completado.");
     }
 }

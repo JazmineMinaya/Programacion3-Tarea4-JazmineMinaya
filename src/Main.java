@@ -5,12 +5,23 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.BufferedReader;
 
 public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+    }
+
+    // Ejercicio #1
+
+    public static void simuladorDescargas() {
+        HiloDescarga archivo1 = new HiloDescarga("Archivo1");
+        HiloDescarga archivo2 = new HiloDescarga("Archivo2");
+        HiloDescarga archivo3 = new HiloDescarga("Archivo3");
+
+        archivo1.start();
+        archivo2.start();
+        archivo3.start();
     }
 
     // Ejercicio #3
