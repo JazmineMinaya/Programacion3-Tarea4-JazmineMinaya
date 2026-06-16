@@ -20,8 +20,8 @@ public class HiloCorredor extends Thread {
         }
 
         if (ganadorCarrera == null) {
-                ganadorCarrera = corredor;
-                System.out.println("\n" + corredor + " llegó primero a la meta.\n");
+            ganadorCarrera = corredor;
+            System.out.println("\n" + corredor + " llegó primero a la meta.\n");
         }
         
         System.out.println(corredor + " llegó a la meta.");
